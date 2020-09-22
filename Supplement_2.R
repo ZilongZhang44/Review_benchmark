@@ -8,11 +8,10 @@ library(umap)
 library(M3Drop)
 library(ggpubr)
 
-klein.dat <- read.csv("klein.csv",header = T,row.names = 1)
-klein.label <- read.csv("klein_label.csv",row.names = NULL)
-klein.label <- as.character(as.matrix(klein.label))
+dat<- readRDS("klein.rds")
+klein.dat <- counts(dat)
+klein.label <- dat$cell_type1
 l<- factor(klein.label)
-
 
 set.seed(1234567)
 ####
@@ -346,7 +345,7 @@ img <- ggarrange(p_1,p_2,p_3,p_4,p_5,p_6,
 
 img
 
-ggsave("D:/BIB_figure/S2.eps", width = 80, height = 60, units = "cm")
+ggsave("S2.eps", width = 80, height = 60, units = "cm")
 
 dev.off()
 
