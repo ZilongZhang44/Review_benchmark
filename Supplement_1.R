@@ -8,9 +8,9 @@ library(umap)
 library(M3Drop)
 library(ggpubr)
 
-li.dat <- read.csv("li.csv",header = T,row.names = 1)
-li.label <- read.csv("li_label.csv",row.names = NULL)
-li.label <- as.character(as.matrix(li.label))
+dat<- readRDS("li.rds")
+li.dat <- counts(dat)
+li.label <- dat$cell_type1
 l<- factor(li.label)
 
 
