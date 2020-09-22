@@ -8,24 +8,6 @@ library(umap)
 library(M3Drop)
 library(ggpubr)
 
-myfree<-theme_set(theme_bw())
-windowsFonts(HEL=windowsFont("Helvetica CE 55 Roman"),
-             RMN=windowsFont("Times New Roman"),
-             ARL=windowsFont("Arial"))
-old_theme <- theme_update(
-  plot.title=element_text(family="ARL", size=22, face="bold", colour="black"),
-  axis.title.x=element_text(family="HEL", size=18,face="bold", colour="black"),
-  axis.title.y=element_text(family="HEL", size=18, face="bold",angle=90, colour="black"),
-  axis.text.x=element_text(family="RMN", size=16, colour="black"),
-  axis.text.y=element_text(family="RMN", size=16, colour="black"),
-  axis.ticks=element_line(colour="black"),
-  panel.grid.major=element_blank(),
-  panel.grid.minor=element_blank(),
-  panel.background=element_blank(),
-  axis.line=element_line(size=1)
-)
-
-
 dat<- readRDS("deng-reads.rds")
 deng.dat <- counts(dat)
 deng.label <- dat$cell_type1
@@ -365,7 +347,7 @@ img <- ggarrange(p_1,p_2,p_3,p_4,p_5,p_6,
 
 img
 
-ggsave("D:/BIB_figure/Figure3.eps", width = 80, height = 60, units = "cm")
+ggsave("Figure3.eps", width = 80, height = 60, units = "cm")
 
 dev.off()
 
