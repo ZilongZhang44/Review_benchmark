@@ -26,10 +26,11 @@ old_theme <- theme_update(
 )
 
 
-deng.dat <- read.csv("deng.csv",header = T,row.names = 1)
-deng.label <- read.csv("deng_label.csv",row.names = NULL)
-deng.label <- as.character(as.matrix(deng.label))
+dat<- readRDS("deng-reads.rds")
+deng.dat <- counts(dat)
+deng.label <- dat$cell_type1
 l<- factor(deng.label)
+
 
 
 set.seed(1234567)
