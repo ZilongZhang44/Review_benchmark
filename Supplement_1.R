@@ -13,7 +13,6 @@ li.dat <- counts(dat)
 li.label <- dat$cell_type1
 l<- factor(li.label)
 
-
 set.seed(1234567)
 ####
 raw <- function(dat = li.dat){
@@ -346,7 +345,7 @@ img <- ggarrange(p_1,p_2,p_3,p_4,p_5,p_6,
 
 img
 
-ggsave("D:/BIB_figure/S1.eps", width = 80, height = 60, units = "cm")
+ggsave("S1.eps", width = 80, height = 60, units = "cm")
 
 dev.off()
 
